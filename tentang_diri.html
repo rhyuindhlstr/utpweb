@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tentang Diri - Rahayu Indah Lestari</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    /* Navbar from home */
+    .navbar-custom {
+      background-color: #111;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .navbar-custom .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-custom .logo img {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 10px;
+    }
+
+    .navbar-custom ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .navbar-custom li {
+      margin: 0 15px;
+    }
+
+    .navbar-custom a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-custom a:hover {
+      color: #f39c12;
+      border-bottom: 2px solid #f39c12;
+    }
+
+    @media (max-width: 768px) {
+      .navbar-custom {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .navbar-custom ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .navbar-custom li {
+        margin: 10px 0;
+      }
+
+      .navbar-custom .logo {
+        margin-bottom: 10px;
+      }
+    }
+
+
+    /* Animasi tambahan */
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes glow {
+    0% { box-shadow: 0 0 10px #f39c12; }
+    50% { box-shadow: 0 0 20px #f1c40f; }
+    100% { box-shadow: 0 0 10px #f39c12; }
+  }
+  
+  .slide-up {
+    animation: slideUp 1s ease forwards;
+  }
+  
+  .glow-btn {
+    font-weight: bold;
+    border-radius: 50px;
+    padding: 12px 30px;
+    transition: all 0.4s ease;
+    animation: glow 2s infinite alternate;
+  }
+  
+  .glow-btn:hover {
+    background-color: #ffae00;
+    transform: scale(1.05);
+    color: #000;
+    text-shadow: 0 0 10px #fff;
+  }
+  
+    body {
+      background: #000 url('https://www.transparenttextures.com/patterns/stardust.png');
+      background-size: cover;
+      background-attachment: fixed;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .section {
+      padding: 60px 0;
+    }
+
+    .highlight {
+      color: #f39c12;
+    }
+
+    #about ul {
+      padding-left: 20px;
+    }
+
+    #about li {
+      margin-bottom: 10px;
+    }
+
+    img.rounded-circle {
+      border: 4px solid #f39c12;
+      transition: transform 0.4s ease;
+    }
+
+    img.rounded-circle:hover {
+      transform: scale(1.05);
+    }
+
+    .btn-warning {
+      color: #000;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .btn-warning:hover {
+      background-color: #d48900;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 193, 7, 0.4);
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .zoom-in {
+      opacity: 0;
+      transform: scale(0.95);
+      animation: zoomIn 0.6s ease forwards;
+    }
+
+    .delay-1 { animation-delay: 0.3s; }
+    .delay-2 { animation-delay: 0.6s; }
+    .delay-3 { animation-delay: 0.9s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes zoomIn {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .text-center-mobile {
+        text-align: center;
+      }
+
+      .text-center-mobile img {
+        margin-bottom: 20px;
+      }
+    }
+
+    
+
+    /* Proyek List Enhancements */
+    #about ul.list-unstyled li {
+      background-color: #111;
+      padding: 15px 20px;
+      border-radius: 10px;
+      transition: all 0.4s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #about ul.list-unstyled li:hover {
+      transform: scale(1.02);
+      background-color: #1a1a1a;
+      box-shadow: 0 8px 20px rgba(243, 156, 18, 0.3);
+    }
+
+    #about ul.list-unstyled li::before {
+      content: '';
+      position: absolute;
+      width: 6px;
+      height: 100%;
+      background-color: #f39c12;
+      left: 0;
+      top: 0;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+      transition: height 0.4s ease;
+    }
+
+    #about ul.list-unstyled li:hover::before {
+      height: 100%;
+    }
+
+    #about h6 span.badge {
+      font-size: 0.85rem;
+      padding: 0.35em 0.75em;
+      background: linear-gradient(135deg, #f39c12, #f1c40f);
+      color: #000;
+    }
+
+    #about ul.list-unstyled p {
+      margin-bottom: 0;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      color: #ccc;
+    }
+    .profile-photo {
+      max-width: 280px;
+      width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+      border: 5px solid #f39c12;
+      box-shadow: 0 4px 20px rgba(243, 156, 18, 0.3);
+      transition: transform 0.4s ease;
+    }
+    
+    .profile-photo:hover {
+      transform: scale(1.08);
+    }    
+
+    
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar-custom">
+    <div class="logo">
+      <span style="color: #fff; font-weight: bold;">Portofolio</span>
+    </div>
+    <ul>
+      <li><a href="UTP_PEMWEB.html">Home</a></li>
+      <li><a href="tentang_diri.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="service.html">Service</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Tentang Diri Section -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="mb-5 text-center fade-in delay-1">Tentang Diri</h2>
+      <div class="row align-items-center">
+        <!-- Foto Profil -->
+        <div class="col-md-4 text-center text-center-mobile fade-in delay-2">
+          <img src="me.jpg" alt="Foto Profil" class="img-fluid rounded-circle shadow profile-photo">
+        </div>
+
+        <!-- Perkenalan & Info Proyek -->
+        <div class="col-md-8 fade-in delay-3">
+          <h4 class="mb-3">Halo! Saya <span class="highlight">Rahayu Indah Lestari</span></h4>
+          <p>
+            Saya seorang <strong>Front End Developer</strong> dengan pengalaman dalam mengembangkan aplikasi web dinamis, responsif, dan user-friendly.
+            Passion saya adalah membangun sistem yang efisien dan berdampak nyata bagi pengguna.
+          </p>
+          <p><strong>Name:</strong> Rahayu Indah Lestari</p>
+          <p><strong>Date of Birth:</strong> September 02, 2005</p>
+          <p><strong>Address:</strong> Kotabumi, Bandar Lampung</p>
+          <p><strong>Email:</strong> rhyuindah98@gmail.com</p>
+          <p><strong>Phone:</strong> +62 83169186686</p>
+          <p><strong>Projects Complete:</strong> 10</p>
+          </p>
+          <hr class="bg-secondary">
+          <h5>Proyek yang Sedang Dikerjakan:</h5>
+          <ul class="list-unstyled">
+            <li class="fade-in zoom-in delay-1 mb-4">
+              <h6 class="mb-1">
+                <i class="fas fa-tractor text-warning mr-2" data-toggle="tooltip" title="Proyek penyewaan alat berat untuk pertanian"></i>
+                <span class="badge badge-warning">AgroTech</span>
+                <small class="text-muted ml-2">Jan 2025 - Sekarang</small>
+              </h6>
+              <p class="mb-0">Sistem penyewaan alat berat pertanian berbasis web.</p>
+            </li>
+
+            <li class="fade-in zoom-in delay-2 mb-4">
+              <h6 class="mb-1">
+                <i class="fas fa-laptop-code text-warning mr-2" data-toggle="tooltip" title="Proyek portofolio pribadi berbasis web interaktif"></i>
+                <span class="badge badge-warning">Portofolio Interaktif</span>
+                <small class="text-muted ml-2">Feb 2025</small>
+              </h6>
+              <p class="mb-0">Web personal untuk menampilkan karya & keterampilan.</p>
+            </li>
+
+            <li class="fade-in zoom-in delay-3 mb-4">
+              <h6 class="mb-1">
+                <i class="fas fa-chalkboard-teacher text-warning mr-2" data-toggle="tooltip" title="Sistem pembelajaran online untuk sekolah atau organisasi"></i>
+                <span class="badge badge-warning">Sistem E-Learning</span>
+                <small class="text-muted ml-2">Mar 2025</small>
+              </h6>
+              <p class="mb-0">Platform pembelajaran online berbasis Laravel & Vue.js.</p>
+            </li>
+          </ul>
+          <a href="#skills" class="btn btn-warning mt-3">Lihat Skill Saya</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Tooltip Activation -->
+  <script>
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+  
+    // Optional: trigger animation on scroll
+    $(window).on('scroll', function () {
+      $('.slide-up').each(function () {
+        const top = $(this).offset().top;
+        const scroll = $(window).scrollTop();
+        const winHeight = $(window).height();
+        if (top < scroll + winHeight - 100) {
+          $(this).addClass('animated');
+        }
+      });
+    });
+  </script>  
+
+  <!-- Menerima Proyek Baru -->
+<section class="section" id="open-projects">
+    <div class="container text-center">
+      <div class="fade-in slide-up delay-2">
+        <h2 class="mb-4"><i class="fas fa-briefcase text-warning mr-2"></i>Menerima Proyek Baru</h2>
+        <p class="lead mb-4 text-light">
+          Apakah kamu sedang mencari seorang <span class="highlight">developer</span> untuk mewujudkan ide digitalmu?
+          Saya siap membantu membangun solusi yang <strong>kreatif</strong> dan <strong>efektif</strong>.
+        </p>
+        <a href="mailto:rahayu@example.com" class="btn btn-lg btn-warning glow-btn">
+          <i class="fas fa-paper-plane mr-2"></i> Hubungi Saya Sekarang
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer Section -->
+  <footer class="text-center section">
+    <p>&copy; 2025 Rahayu Indah Lestari. All rights reserved.</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

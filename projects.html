@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proyek Saya - Rahayu Indah Lestari</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet" />
+  <style>
+    /* Navbar from home */
+    .navbar-custom {
+        background-color: #111;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+      }
+  
+      .navbar-custom .logo {
+        display: flex;
+        align-items: center;
+      }
+  
+      .navbar-custom .logo img {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 10px;
+      }
+  
+      .navbar-custom ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+      }
+  
+      .navbar-custom li {
+        margin: 0 15px;
+      }
+  
+      .navbar-custom a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 10px;
+        transition: all 0.3s ease;
+      }
+  
+      .navbar-custom a:hover {
+        color: #f39c12;
+        border-bottom: 2px solid #f39c12;
+      }
+  
+      @media (max-width: 768px) {
+        .navbar-custom {
+          flex-direction: column;
+          align-items: center;
+        }
+  
+        .navbar-custom ul {
+          flex-direction: column;
+          align-items: center;
+        }
+  
+        .navbar-custom li {
+          margin: 10px 0;
+        }
+  
+        .navbar-custom .logo {
+          margin-bottom: 10px;
+        }
+      }
+
+    body {
+        background: #000 url('https://www.transparenttextures.com/patterns/stardust.png');
+        background-size: cover;
+        background-attachment: fixed;
+        color: #fff;
+        font-family: 'Segoe UI', sans-serif;
+        overflow-x: hidden;
+      }
+      
+    .section {
+      padding: 60px 0;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-weight: 700;
+      color: #f39c12;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.7);
+    }
+
+    .filters {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .filters button {
+      background-color: transparent;
+      border: 2px solid #f39c12;
+      color: #f39c12;
+      margin: 0 10px;
+      padding: 6px 16px;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .filters button.active, .filters button:hover {
+      background-color: #f39c12;
+      color: #000;
+    }
+
+    .project-card {
+      background-color: #111;
+      border: 1px solid #333;
+      border-radius: 16px;
+      padding: 20px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      height: 100%;
+      overflow: hidden;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 6px 20px rgba(243, 156, 18, 0.4);
+    }
+
+    .project-icon {
+      font-size: 2rem;
+      color: #f39c12;
+    }
+
+    .badge-custom {
+      background-color: #f39c12;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .project-img {
+      width: 100%;
+      height: 200px; 
+      border-radius: 10px;
+      margin-bottom: 15px;
+      cursor: pointer;
+      object-fit: cover; 
+    }
+
+    @keyframes fadeInUp {
+      0% {opacity: 0; transform: translateY(30px);}
+      100% {opacity: 1; transform: translateY(0);}
+    }
+
+    .btn-back {
+      background-color: #f39c12;
+      color: #000;
+      font-weight: bold;
+      margin-top: 30px;
+      transition: transform 0.3s ease;
+    }
+
+    .btn-back:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 15px rgba(255, 193, 7, 0.5);
+    }
+  </style>
+</head>
+<body>
+    <!-- Navbar -->
+  <nav class="navbar-custom">
+    <div class="logo">
+      <span style="color: #fff; font-weight: bold;">Portofolio</span>
+    </div>
+    <ul>
+      <li><a href="UTP_PEMWEB.html">Home</a></li>
+      <li><a href="tentang_diri.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="service.html">Service</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="section" id="projects">
+    <div class="container">
+      <h2>✨ Koleksi Proyek</h2>
+
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">Semua</button>
+        <button class="filter-btn" data-filter="web">Web App</button>
+        <button class="filter-btn" data-filter="website">Website</button>
+      </div>
+
+      <div class="row" id="project-container">
+        <!-- Proyek 1 -->
+        <div class="col-md-4 mb-4 project-item" data-category="website">
+          <div class="project-card">
+            <a href="agrotech.png" class="glightbox">
+              <img src="agrotech.png" class="project-img" alt="AgroTech">
+            </a>
+            <div class="d-flex align-items-center mb-2">
+              <i class="fas fa-tractor project-icon me-2"></i>
+              <div>
+                <h5 class="mb-0">AgroTech</h5>
+                <span class="badge badge-custom">Website</span>
+              </div>
+            </div>
+            <p>Sistem penyewaan alat berat pertanian berbasis web untuk meningkatkan efisiensi pertanian.</p>
+          </div>
+        </div>
+
+        <!-- Proyek 2 -->
+        <div class="col-md-4 mb-4 project-item" data-category="website">
+          <div class="project-card">
+            <a href="porto.png" class="glightbox">
+              <img src="porto.png" class="project-img" alt="Portofolio">
+            </a>
+            <div class="d-flex align-items-center mb-2">
+              <i class="fas fa-code project-icon me-2"></i>
+              <div>
+                <h5 class="mb-0">Portofolio Interaktif</h5>
+                <span class="badge badge-custom">Website</span>
+              </div>
+            </div>
+            <p>Website personal interaktif yang menampilkan proyek, skill, dan kontak secara dinamis.</p>
+          </div>
+        </div>
+
+        <!-- Proyek 3 -->
+        <div class="col-md-4 mb-4 project-item" data-category="web">
+          <div class="project-card">
+            <a href="tetris.png" class="glightbox">
+              <img src="tetris.png" class="project-img" alt="Tetris">
+            </a>
+            <div class="d-flex align-items-center mb-2">
+              <i class="fas fa-laptop project-icon me-2"></i>
+              <div>
+                <h5 class="mb-0">Tetris</h5>
+                <span class="badge badge-custom">Web App</span>
+              </div>
+            </div>
+            <p>permainan puzzle di mana pemain harus menyusun balok-balok geometris.</p>
+          </div>
+        </div>
+
+        <!-- Proyek 4 -->
+        <div class="col-md-4 mb-4 project-item" data-category="web">
+          <div class="project-card">
+            <a href="N2048.png" class="glightbox">
+              <img src="N2048.png" class="project-img" alt="N2048">
+            </a>
+            <div class="d-flex align-items-center mb-2">
+              <i class="fas fa-map-marked-alt project-icon me-2"></i>
+              <div>
+                <h5 class="mb-0">Game N2048</h5>
+                <span class="badge badge-custom">Web App</span>
+              </div>
+            </div>
+            <p>permainan puzzle berbasis angka yang dimainkan di papan 4x4. </p>
+          </div>
+        </div>
+
+        <!-- Proyek 5 -->
+        <div class="col-md-4 mb-4 project-item" data-category="website">
+          <div class="project-card">
+            <a href="sipantau.png" class="glightbox">
+              <img src="sipantau.png" class="project-img" alt="SiPantau">
+            </a>
+            <div class="d-flex align-items-center mb-2">
+              <i class="fas fa-coffee project-icon me-2"></i>
+              <div>
+                <h5 class="mb-0">SiPantau</h5>
+                <span class="badge badge-custom">Website</span>
+              </div>
+            </div>
+            <p>Website untuk memantau harga bahan pokok.</p>
+          </div>
+        </div>
+
+        <!-- Proyek 6 -->
+        <div class="col-md-4 mb-4 project-item" data-category="web">
+          <div class="project-card">
+            <a href="SPH.png" class="glightbox">
+              <img src="SPH.png" class="project-img" alt="Sistem Pendataan Hewan">
+            </a>
+            <div class="d-flex align-items-center mb-2">
+              <i class="fas fa-boxes project-icon me-2"></i>
+              <div>
+                <h5 class="mb-0">Sistem Pendataan Hewan</h5>
+                <span class="badge badge-custom">Web App</span>
+              </div>
+            </div>
+            <p>Sistem manajemen untuk mendata hewan di kebun binatang.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <a href="UTP_PEMWEB.html" class="btn btn-back">← Kembali ke Home</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script>
+    const lightbox = GLightbox({ selector: '.glightbox' });
+
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projects = document.querySelectorAll('.project-item');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+
+        projects.forEach(project => {
+          const category = project.dataset.category;
+          if (filter === 'all' || category === filter) {
+            project.style.display = 'block';
+          } else {
+            project.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+
+<!-- Footer Section -->
+  <footer class="text-center section">
+    <p>&copy; 2025 Rahayu Indah Lestari. All rights reserved.</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
